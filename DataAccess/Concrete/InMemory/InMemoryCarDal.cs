@@ -19,7 +19,7 @@ namespace DataAccess.Concrete.InMemory
                 new Car{CarId=2, BrandId=1, ColorId = 250, ModelYear= 2020, DailyPrice= 400, Description = "Toyota C-HR" },
                 new Car{CarId=3, BrandId=2, ColorId = 150, ModelYear = 2021, DailyPrice = 700, Description = "BMW 525"},
                 new Car{CarId=4, BrandId= 3, ColorId= 10, ModelYear= 2020, DailyPrice = 230, Description="Ford Focus" },
-                new Car{CarId=5, BrandId=4, ColorId= 35, ModelYear= 2019, DailyPrice=500, Description= "Wolkswagen Passat" },
+                new Car{CarId=5, BrandId=4, ColorId= 35, ModelYear= 2019, DailyPrice=500, Description= "Volkswagen Passat" },
             };
         }
         public void Add(Car car)
