@@ -9,7 +9,7 @@ namespace DataAccess.Concrete.InMemory
 {
     public class InMemoryCarDal : ICarDal
     {
-        //Dependency İnjeciton
+        //Dependency İnjection
         List<Car> _cars;
         public InMemoryCarDal()
         {
