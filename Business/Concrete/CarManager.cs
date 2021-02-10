@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -40,14 +41,8 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<Car> GetCarsBrandId(int brandId)
-        {
-            return _carDal.GetAll(c=> c.BrandId == brandId);
-        }
-
-        public List<Car> GetCarsByColorId(int colorId)
-        {
-            return _carDal.GetAll(c=> c.ColorId == colorId);
+        public List<CarDetailDto> GetCarDetails() {
+            return _carDal.GetCarDetails();
         }
 
         public void Update(Car car)
@@ -55,5 +50,7 @@ namespace Business.Concrete
             _carDal.Update(car);
             Console.WriteLine("Başarıyla güncellendi");
         }
+
+ 
     }
 }

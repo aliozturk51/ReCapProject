@@ -15,16 +15,11 @@ namespace ConsoleUI
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
 
-            foreach (var car in carManager.GetCarsBrandId(2))
+            foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.CarId + " " +  car.ModelYear + " " + car.Description + " günlük kiralama ücreti " + car.DailyPrice + " TL");
-             
+                Console.WriteLine(car.CarId + " " + " " + car.Description + " " + " " + car.ModelYear + " " + car.DailyPrice + "TL");
             }
 
-            foreach (var car in carManager.GetCarsByColorId(10))
-            {
-                Console.WriteLine(car.ModelYear);
-            }
         }
     }
 }
