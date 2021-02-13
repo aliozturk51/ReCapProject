@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Business.Constant;
 using DataAccess.Concrete.EntityFrameWork;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -10,15 +11,80 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            EfCarTest();
-            //EfBrandTest();
-            //EfColorTest();
-            //EfBrandNameTest();
+            //CarGetCarDetailsTest();
+            //BrandGetAllTest();
+            //ColorGetAllTest();
+            //BrandNameTest();
+
+            UserGetAllTest();
+
+            RentalGetRentalDetailsTest();
+
+            RentalAddTest();
+
 
         }
 
+        private static void RentalAddTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
-        private static void EfCarTest()
+            var result = rentalManager.Add(new Rental { Id = 5, CustomerId = 5, CarId = 5, RentDate = DateTime.Now, ReturnDate = null });
+
+            if (result.Success)
+            {
+                Console.WriteLine(result.Message);
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+        }
+
+        private static void RentalGetRentalDetailsTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+
+            var result = rentalManager.GetRentalDetails();
+           
+
+            if (result.Success)
+            {
+                Console.WriteLine(result.Message);
+                foreach (var rental in result.Data)
+                {
+
+                    Console.WriteLine(rental.Id + " " + rental.FirstName + " " + rental.LastName + " " + rental.CompanyName);
+                    
+                }
+                
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+        }
+
+        private static void UserGetAllTest()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+
+            var result = userManager.GetAll();
+
+            if (result.Success)
+            {
+                foreach (var user in result.Data)
+                {
+                    Console.WriteLine(user.Id + "Kullanıcı Adı: " + user.FirstName + " " + "Kullanıcı Soyadı: " + user.LastName + " " + "Kullanıcı Mail: " + user.Email + " " + "Kullanıcı Şifre: " + " " + user.Password);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+        }
+
+        private static void CarGetCarDetailsTest()
         {
 
 
@@ -26,6 +92,8 @@ namespace ConsoleUI
 
 
             var result = carManager.GetCarDetails();
+            Console.WriteLine(result.Message);
+
             if (result.Success)
             {
                 foreach (var car in result.Data)
@@ -42,7 +110,7 @@ namespace ConsoleUI
 
 
 
-        private static void EfColorTest()
+        private static void ColorGetAllTest()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
@@ -60,7 +128,7 @@ namespace ConsoleUI
             }
         }
 
-        private static void EfBrandTest()
+        private static void BrandGetAllTest()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
@@ -78,7 +146,7 @@ namespace ConsoleUI
             }
         }
 
-        private static void EfBrandNameTest()
+        private static void BrandNameTest()
         {
 
             //Marka ismi ekleme ve kuralların kontrolü 
