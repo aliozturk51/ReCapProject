@@ -29,6 +29,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalAdded);
         }
 
+        public IResult Delete(Rental rental)
+        {
+            _rentalDal.Delete(rental);
+            return new SuccessResult(Messages.RentalDeleted);
+        }
+
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), Messages.RentalListed);

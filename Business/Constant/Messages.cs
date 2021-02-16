@@ -52,8 +52,10 @@ namespace Business.Constant
         //Rental
         public static string RentalError = "Araç teslimi yapılmamıştır.";
         public static string RentalAdded  = "Kiralama işlemi gerçekleştirilmiştir.";
-        public static string RentalListed = "Kiralanan araçlar listelendi.";
+        public static string RentalDeleted = "Kiralama bilgisi silindi.";
         public static string RentalUpdated = "Kiralama bilgileri güncellendi.";
+        public static string RentalListed = "Kiralanan araçlar listelendi.";
         public static string RentalDetails = "Kiralama detayları";
+        
     }
 }
