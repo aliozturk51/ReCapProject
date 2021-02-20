@@ -20,6 +20,7 @@ namespace Entities.Concrete
         public int ModelYear { get; set; }
         public decimal DailyPrice { get; set; }
 
+        //CarName
         public string Description { get; set; }
     }
 }
