@@ -56,6 +56,9 @@ namespace Business.Constant
         public static string RentalUpdated = "Kiralama bilgileri güncellendi.";
         public static string RentalListed = "Kiralanan araçlar listelendi.";
         public static string RentalDetails = "Kiralama detayları";
-        
+
+        //İmage
+        public static string CarImageLimitExceeded = "Bir araç için en fazla 5 resim eklenebilir.";
+
     }
 }
