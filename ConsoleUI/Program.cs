@@ -1,5 +1,5 @@
 ﻿using Business.Concrete;
-using Business.Constant;
+using Business.Constants;
 using DataAccess.Concrete.EntityFrameWork;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -75,7 +75,8 @@ namespace ConsoleUI
             {
                 foreach (var user in result.Data)
                 {
-                    Console.WriteLine(user.Id + "Kullanıcı Adı: " + user.FirstName + " " + "Kullanıcı Soyadı: " + user.LastName + " " + "Kullanıcı Mail: " + user.Email + " " + "Kullanıcı Şifre: " + " " + user.Password);
+                    Console.WriteLine(user.Id + "Kullanıcı Adı: " + user.FirstName + " " + "Kullanıcı Soyadı: " + user.LastName + " " + "Kullanıcı Mail: " + user.Email);
+                        //"Kullanıcı Şifre: " " + " " + user.Password);
                 }
             }
             else
