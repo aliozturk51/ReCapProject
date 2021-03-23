@@ -31,7 +31,8 @@ namespace DataAccess.Concrete.EntityFrameWork
                                  ColorName =co.ColorName,
                                  ModelYear = ca.ModelYear,
                                  DailyPrice = ca.DailyPrice,
-                                 Description = ca.Description
+                                 Description = ca.Description,
+                                 ImagePath = context.CarImages.Where(c => c.CarId == c.CarId).FirstOrDefault().ImagePath
 
                              };
                 return result.ToList();
@@ -82,6 +83,7 @@ namespace DataAccess.Concrete.EntityFrameWork
                                  DailyPrice = ca.DailyPrice,
                                  Description = ca.Description,
                                  CarId = ca.CarId,
+                                
                              };
                              return result.ToList();
             }
